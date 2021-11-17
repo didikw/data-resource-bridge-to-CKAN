@@ -1,0 +1,16 @@
+#cek nama dataset di platform CKAN
+https://opendata.blitarkab.go.id/api/3/action/package_list  <-- package_id = dataset, lihat disini
+
+{
+"help": "https://opendata.blitarkab.go.id/api/3/action/help_show?name=package_list",
+"success": true,
+"result": [
+"data-historis-alamat-ip-publik-dinas-kominfo-kab-blitar",   <-- contoh kita mau nambah csv sebagai resource baru di dataset ini maka
+"data-jumlah-tempat-ibadah-kabupaten-blitar",
+]
+}
+
+#curl command insert resource baru ke dalam dataset sesuai dataset yg dituju
+curl https://opendata.blitarkab.go.id/api/3/action/resource_create \
+-d '{"package_id": "data-historis-alamat-ip-publik-dinas-kominfo-kab-blitar", "url": "http://blablabla.net/test.csv", "name": "My Test pake nama"}' \
+-H "Authorization: <api-token>"
